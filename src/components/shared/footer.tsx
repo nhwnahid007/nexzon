@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { ChevronUp } from "lucide-react";
-import Link from "next/link";
-import { APP_NAME } from "@/lib/constants";
-import { Button } from "../ui/button";
+import { ChevronUp } from 'lucide-react';
+import Link from 'next/link';
+import { APP_NAME } from '@/lib/constants';
+import { Button } from '../ui/button';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <Button
           variant="ghost"
           className="bg-gray-800 w-full  rounded-none "
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <ChevronUp className="mr-2 h-4 w-4" />
           Back to top

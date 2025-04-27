@@ -1,5 +1,5 @@
-import { ShoppingCartIcon } from "lucide-react";
-import Link from "next/link";
+import { ShoppingCartIcon } from 'lucide-react';
+import Link from 'next/link';
 
 const Menu = () => {
   return (
