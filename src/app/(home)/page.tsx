@@ -1,24 +1,27 @@
-import { HomeCard } from '@/components/shared/home/home-card'
+import { HomeCard } from '@/components/shared/home/home-card';
 
-import { getAllCategories, getProductsForCard } from '../../lib/actions/product.actions'
-import { toSlug } from '../../lib/utils'
-import data from '../../lib/data'
-import HomeCarousel from '../../components/shared/home/home-carousel'
+import {
+  getAllCategories,
+  getProductsForCard,
+} from '../../lib/actions/product.actions';
+import { toSlug } from '../../lib/utils';
+import data from '../../lib/data';
+import HomeCarousel from '../../components/shared/home/home-carousel';
 
 export default async function Page() {
-  const categories = (await getAllCategories()).slice(0, 4)
+  const categories = (await getAllCategories()).slice(0, 4);
   const newArrivals = await getProductsForCard({
     tag: 'new-arrival',
     limit: 4,
-  })
+  });
   const featureds = await getProductsForCard({
     tag: 'featured',
     limit: 4,
-  })
+  });
   const bestSellers = await getProductsForCard({
     tag: 'best-seller',
     limit: 4,
-  })
+  });
   const cards = [
     {
       title: 'Categories to explore',
@@ -56,14 +59,14 @@ export default async function Page() {
         href: '/search?tag=new-arrival',
       },
     },
-  ]
+  ];
 
   return (
     <>
       <HomeCarousel items={data.carousels} />
-      <div className='md:p-4 md:space-y-4 bg-border'>
+      <div className="md:p-4 md:space-y-4 bg-border">
         <HomeCard cards={cards} />
       </div>
     </>
-  )
+  );
 }
